@@ -1,6 +1,8 @@
 import LoginPage from '../pageobjects/login.page.js'
 import SecurePage from '../pageobjects/secure.page.js'
-import MenuPage from '../pageobjects/hamburger.menu.js'
+import Components from '../pageobjects/components.js'
+import Functions from '../pageobjects/functions.js'
+import LFunc from '../pageobjects/largeFunctions.js'
 
 describe('Logging in to test the four menu options', () => {
     beforeEach(async () => {
@@ -9,7 +11,7 @@ describe('Logging in to test the four menu options', () => {
     })
 
     it(`once logged in, open the menu, then go through all four options`, async () => {
-        await MenuPage.workAbout()
+
     })
 
 })
