@@ -5,11 +5,21 @@ import Components from '../pageobjects/components.js'
 
 class LFunc extends Page {
 
-/*     \\---------------------------- Large Function Title ----------------------------//     */
-/*      \\----------------------------------------------------------------------------//     */
-    async largeFunctionName() {
-
+/*     \\---------------------------- Run Accessories ----------------------------//     */
+/*      \\-----------------------------------------------------------------------//     */
+    async runMenus() {
+        await Functions.clickStore()
+        await Functions.clickCommunity()
+        await Functions.clickAbout()
+        await Functions.clickSupport()
     }
+
+    async runMenusLoop() {
+        for (let i = 0; i < 10; i++) {
+            await this.runMenus()
+        }
+    }
+
 }
 
 export default new LFunc();
