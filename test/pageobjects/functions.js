@@ -7,7 +7,7 @@ class Functions extends Page {
 /*     \\---------------------------- Opening Accessories Drop Down + Using Each Option ----------------------------//     */
 /*      \\---------------------------------------------------------------------------------------------------------//     */
     async clickStore() {
-        await expect(Components.storeBtn).toBePresent()
+        await expect(Components.storeBtn).toExist()
         await Components.storeBtn.click()
     }
 

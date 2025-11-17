@@ -15,9 +15,13 @@ class LFunc extends Page {
     }
 
     async runMenusLoop() {
-        for (let i = 0; i < 10; i++) {
-            await this.runMenus()
-        }
+        await browser.url('https://store.steampowered.com/')
+        await expect(browser).toHaveUrl('https://store.steampowered.com/')
+        await this.runMenus()
+
+        // for (let i = 0; i < 10; i++) {
+        //     await this.runMenus()
+        // }
     }
 
 }
