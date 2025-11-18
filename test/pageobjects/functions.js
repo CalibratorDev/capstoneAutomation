@@ -7,23 +7,27 @@ class Functions extends Page {
 /*     \\---------------------------- Opening Accessories Drop Down + Using Each Option ----------------------------//     */
 /*      \\---------------------------------------------------------------------------------------------------------//     */
     async clickStore() {
-        await expect(Components.storeBtn).toExist()
-        await Components.storeBtn.click()
+
+        if (sampleCondition) {
+            await Components.storeBtnOn.click()
+        } else {
+            await Components.storeBtnOff.click()
+        }
     }
 
     async clickCommunity() {
-        await expect(Components.communityBtn).toBePresent()
-        await Components.communityBtn.click()
+        await expect(Components.communityBtnOn).toBePresent()
+        await Components.communityBtnOn.click()
     }
 
     async clickAbout() {
-        await expect(Components.aboutBtn).toBePresent()
-        await Components.aboutBtn.click()
+        await expect(Components.aboutBtnOn).toBePresent()
+        await Components.aboutBtnOn.click()
     }
 
     async clickSupport() {
-        await expect(Components.supportBtn).toBePresent()
-        await Components.supportBtn.click()
+        await expect(Components.supportBtnOn).toBePresent()
+        await Components.supportBtnOn.click()
     }
 }
 
