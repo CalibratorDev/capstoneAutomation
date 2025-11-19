@@ -10,9 +10,6 @@ describe('Checking for captcha on the FBRC website', () => {
         await browser.url('https://steamcommunity.com/')
         await expect(browser).toHaveUrl('https://steamcommunity.com/')
 
-        // let elem = await $('a.menuitem.supernav.supernav_active[href="https://store.steampowered.com/?snr=1_4_4__global-header"]')
-        // let isEnabled = await elem.isEnabled();
-        // console.log(isEnabled);
         await Functions.clickStore()
     })
 
