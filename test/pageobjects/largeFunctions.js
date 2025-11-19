@@ -5,23 +5,10 @@ import Components from '../pageobjects/components.js'
 
 class LFunc extends Page {
 
-/*     \\---------------------------- Run Accessories ----------------------------//     */
-/*      \\-----------------------------------------------------------------------//     */
-    async runMenus() {
-        await Functions.clickStore()
-        await Functions.clickCommunity()
-        await Functions.clickAbout()
-        await Functions.clickSupport()
-    }
+/*     \\---------------------------- Large Function Title ----------------------------//     */
+/*      \\----------------------------------------------------------------------------//     */
+    async largeFunction() {
 
-    async runMenusLoop() {
-        await browser.url('https://store.steampowered.com/')
-        await expect(browser).toHaveUrl('https://store.steampowered.com/')
-        await this.runMenus()
-
-        // for (let i = 0; i < 10; i++) {
-        //     await this.runMenus()
-        // }
     }
 
 }

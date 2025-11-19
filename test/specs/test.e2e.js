@@ -7,10 +7,10 @@ import LFunc from '../pageobjects/largeFunctions.js'
 describe('Checking for captcha on the FBRC website', () => {
 
     it(`Checking for captcha using the "Accessories" drop down menu; looped 10 times`, async () => {
-        await browser.url('https://steamcommunity.com/')
-        await expect(browser).toHaveUrl('https://steamcommunity.com/')
+        await browser.url('https://www.homedepot.com/')
+        await expect(browser).toHaveUrl('https://www.homedepot.com/')
 
-        await Functions.clickStore()
+        await LFunc.runMenus()
     })
 
 })
