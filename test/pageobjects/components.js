@@ -6,12 +6,24 @@ class Components extends Page {
 /*     \\---------------------------- Menu Buttons ----------------------------//     */
 /*      \\--------------------------------------------------------------------//     */
 
-    get aboutMenuBtn() {
-        return $('a.menuitem[href="https://store.steampowered.com/about/?snr=1_4_4__global-header"]');
+    get aboutMenuBtn1() {
+        return $('//div[@class]/div[@role="navigation"]/a[@href="https://store.steampowered.com/about/?snr=1_4_4__global-header"]');
+    }
+
+    get aboutMenuBtn2() {
+        return $('//div[@class]/div[@role]/a[@href="https://store.steampowered.com/about/"]');
     }
 
     get steamLogo() {
-        return $('a[href="https://store.steampowered.com/?snr=1_14_4__global-header"][aria-label="Link to the Steam Homepage"]');
+        return $('//span[@id="logo_holder"]/a');
+    }
+
+    get communityBtn() {
+        return $('//div[@role]/a[@href="https://steamcommunity.com/"]');
+    }
+
+    get supportBtn() {
+        return $('//div[@role]/a[@href="https://help.steampowered.com/en/"]');
     }
 
 /*     \\---------------------------- Home Page Carousel Arrows ----------------------------//     */
@@ -21,8 +33,16 @@ class Components extends Page {
         return $('//div/div[@class="arrow right"][@data-usability="1"]');
     }
 
+    get featureLeftArrow() {
+        return $('//div/div[@class="arrow left"][@data-usability="1"]');
+    }
+
     get discountRightArrow() {
         return $('//div/div[@class="arrow right"][@data-usability="2"]');
+    }
+
+    get discountLeftArrow() {
+        return $('//div/div[@class="arrow left"][@data-usability="2"]');
     }
 
 /*     \\---------------------------- Game Listing Links ----------------------------//     */
