@@ -7,14 +7,13 @@ class LFunc extends Page {
 
 /*     \\---------------------------- Large Function Title ----------------------------//     */
 /*      \\----------------------------------------------------------------------------//     */
-    async arrowBtnsLoop() {
-            
-        for (let i = 0; i < 30; i++) {
-            await Functions.featArrowBtn()
-        }
-
-        for (let i = 0; i < 12; i++) {
-            await Functions.discArrowBtn()
+    async menuLoop() {
+        
+        for (let i = 0; i < 2; i++) {
+            await Functions.commBtn()
+            await Functions.supportBtn()
+            await Functions.aboutBtn2()
+            await Functions.logoBtn()
         }
 
     }
