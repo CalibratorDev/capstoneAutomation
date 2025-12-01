@@ -1,5 +1,5 @@
 import { $, browser } from '@wdio/globals'
-import Page from './page.js';
+import Page from './url.js';
 import Components from '../pageobjects/components.js'
 
 class Functions extends Page {
