@@ -13,5 +13,25 @@ describe('Checking for captcha on the Steam website', () => {
 
     })
 
+    it(``, async () => {
+
+        const slideName = await $(`//a/div/div[@class="app_name"]`).getText();
+        await browser.action('pointer')
+            .move({ x: 250, y: 200 })
+            .down()
+            .up()
+            .perform();
+        const gameTitle = await $(`//div/div[@class="apphub_HeaderStandardTop"]/div[@class="apphub_AppName"]`).getText();
+
+        let nameCompare = (slideName == gameTitle);
+
+        if (nameCompare == true) {
+            
+        } else {
+
+        }
+
+    })
+
 })
 

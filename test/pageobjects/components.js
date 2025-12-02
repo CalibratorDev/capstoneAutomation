@@ -66,6 +66,7 @@ class Components extends Page {
     get valveProfile() {
         return $('//div[@class="_2T8Ub04W0G2L6_3692y23L _1qhLqXcizfytm6omB4ywDD"]/a')
     }
+
 }
 
 export default new Components();
