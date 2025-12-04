@@ -45,26 +45,68 @@ class Components extends Page {
         return $('//div/div[@class="arrow left"][@data-usability="2"]');
     }
 
+    get carouselSlide() {
+        return $(`//div[@class="home_cluster_ctn home_ctn"]`);
+    }
+
+    get currentSlide() {
+        return $(`//a/div/div[@class="app_name"]`);
+    }
+
+    get gameTitle() {
+        return $(`//div/div/div[@id="appHubAppName"]`);
+    }
+
 /*     \\---------------------------- Game Listing Links ----------------------------//     */
 /*      \\--------------------------------------------------------------------------//     */
 
     get cs2Listing() {
-        return $('//div/a[@data-ds-appid="730"]')
+        return $('//div/a[@data-ds-appid="730"]');
     }
 
 /*     \\---------------------------- Cart Components ----------------------------//     */
 /*      \\-----------------------------------------------------------------------//     */
 
     get add2Cart() {
-        return $('//a[@id="btn_add_to_cart_54029"]')
+        return $('//a[@id="btn_add_to_cart_54029"]');
     }
 
     get dialogViewCart() {
-        return $('//div[@role]/div/div/button[@class="DialogButton _DialogLayout Primary Focusable"]')
+        return $('//div[@role]/div/div/button[@class="DialogButton _DialogLayout Primary Focusable"]');
     }
 
     get valveProfile() {
-        return $('//div[@class="_2T8Ub04W0G2L6_3692y23L _1qhLqXcizfytm6omB4ywDD"]/a')
+        return $('//div[@class="_2T8Ub04W0G2L6_3692y23L _1qhLqXcizfytm6omB4ywDD"]/a');
+    }
+
+/*     \\---------------------------- View Mature Page ----------------------------//     */
+/*      \\------------------------------------------------------------------------//     */
+
+    get viewMaturePageBtn() {
+        return $(`//a[@id="view_product_page_btn"]`);
+    }
+
+    get viewMatureMessage() {
+        return $(`//h2[contains(text(), "not appropriate")]`);
+    }
+
+    get yearOption() {
+        return $(`//option[@value="2000"]`);
+    }
+
+    get yearDrpDwn() {
+        return $(`//div/select[@id="ageYear"]`);
+    }
+
+/*     \\---------------------------- Carousel Thumbs ----------------------------//     */
+/*      \\-----------------------------------------------------------------------//     */
+
+    get carouselThumbOne() {
+        return $(`//div[@class="carousel_thumbs"][@data-usability="1"]`);
+    }
+
+    get carouselThumbTwo() {
+        return $(`//div[@class="carousel_thumbs"][@data-usability="2"]`);
     }
 
 }

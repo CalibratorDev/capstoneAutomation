@@ -61,6 +61,11 @@ class Functions extends Page {
         await Components.discountLeftArrow.click()
     }
 
+    async slideClick() {
+        // await Components.carouselSlide.moveTo({ xOffset: 250, yOffset: 200})
+        await Components.carouselSlide.click({ xOffset: 250, yOffset: 200})
+    }
+
 /*     \\---------------------------- Select CS2 Listing ----------------------------//     */
 /*      \\--------------------------------------------------------------------------//     */
 
@@ -86,6 +91,19 @@ class Functions extends Page {
     async selectProfile() {
         await expect(Components.valveProfile).toBePresent()
         await Components.valveProfile.click()
+    }
+
+/*     \\---------------------------- Check for Mature Page ----------------------------//     */
+/*      \\-----------------------------------------------------------------------------//     */
+
+    async checkForMature() {
+
+        let matureTextCheck = await Components.viewMatureMessage.isExisting();
+        if (matureTextCheck == true) {
+            await Components.yearDrpDwn.click()
+            await Components.yearOption.click()
+            await Components.viewMaturePageBtn.click()
+        }
     }
 
 }
