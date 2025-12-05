@@ -2,6 +2,7 @@ import { $, browser } from '@wdio/globals'
 import Page from './url.js';
 import Components from '../pageobjects/components.js'
 import components from '../pageobjects/components.js';
+import largeFunctions from './largeFunctions.js';
 
 class Functions extends Page {
 

@@ -26,8 +26,8 @@ class Components extends Page {
         return $('//div[@role]/a[@href="https://help.steampowered.com/en/"]');
     }
 
-/*     \\---------------------------- Home Page Carousel Arrows ----------------------------//     */
-/*      \\---------------------------------------------------------------------------------//     */
+/*     \\---------------------------- Home Page Carousel Components ----------------------------//     */
+/*      \\-------------------------------------------------------------------------------------//     */
 
     get featureRightArrow() {
         return $('//div/div[@class="arrow right"][@data-usability="1"]');
@@ -55,6 +55,14 @@ class Components extends Page {
 
     get gameTitle() {
         return $(`//div/div/div[@id="appHubAppName"]`);
+    }
+
+    get hoverBox() {
+        return $(`//*/div[@id="global_hover"]`);
+    }
+
+    get hoverTitle() {
+        return $(`//*/div[@id="global_hover"]/div/div/div/h4`);
     }
 
 /*     \\---------------------------- Game Listing Links ----------------------------//     */
@@ -102,7 +110,7 @@ class Components extends Page {
 /*      \\-----------------------------------------------------------------------//     */
 
     get carouselThumbOne() {
-        return $(`//div[@class="carousel_thumbs"][@data-usability="1"]`);
+        return $(`//div[@class="carousel_thumbs"][@data-usability="1"]/div[@class="focus"]`);
     }
 
     get carouselThumbTwo() {

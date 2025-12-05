@@ -10,16 +10,15 @@ describe('The final Capstone of this course', () => {
     //     await expect(browser).toHaveUrl('https://store.steampowered.com/')
 
     //     await LFunc.menuLoop()
-
     // })
 
     it(`Checking the names of the carousel slides match with the names of the game the link takes you to`, async () => {
         await browser.url('https://store.steampowered.com/')
         await expect(browser).toHaveUrl('https://store.steampowered.com/')
-        
-        await Functions.checkNames()
-        
 
+
+        await LFunc.nameCheckLoop()
+        await LFunc.carouselLoop()
     })
 
     // it(`Working all the kinds of ways to utilize the search bar`, async () => {
