@@ -1,16 +1,11 @@
 import { $, browser } from '@wdio/globals'
-import Page from './url.js';
 
-class Components extends Page {
+class Components {
 
 /*     \\---------------------------- Menu Buttons ----------------------------//     */
 /*      \\--------------------------------------------------------------------//     */
 
-    get aboutMenuBtn1() {
-        return $('//div[@class]/div[@role="navigation"]/a[@href="https://store.steampowered.com/about/?snr=1_4_4__global-header"]');
-    }
-
-    get aboutMenuBtn2() {
+    get aboutMenuBtn() {
         return $('//div[@class]/div[@role]/a[@href="https://store.steampowered.com/about/"]');
     }
 
@@ -63,28 +58,6 @@ class Components extends Page {
 
     get hoverTitle() {
         return $(`//*/div[@id="global_hover"]/div/div/div/h4`);
-    }
-
-/*     \\---------------------------- Game Listing Links ----------------------------//     */
-/*      \\--------------------------------------------------------------------------//     */
-
-    get cs2Listing() {
-        return $('//div/a[@data-ds-appid="730"]');
-    }
-
-/*     \\---------------------------- Cart Components ----------------------------//     */
-/*      \\-----------------------------------------------------------------------//     */
-
-    get add2Cart() {
-        return $('//a[@id="btn_add_to_cart_54029"]');
-    }
-
-    get dialogViewCart() {
-        return $('//div[@role]/div/div/button[@class="DialogButton _DialogLayout Primary Focusable"]');
-    }
-
-    get valveProfile() {
-        return $('//div[@class="_2T8Ub04W0G2L6_3692y23L _1qhLqXcizfytm6omB4ywDD"]/a');
     }
 
 /*     \\---------------------------- View Mature Page ----------------------------//     */

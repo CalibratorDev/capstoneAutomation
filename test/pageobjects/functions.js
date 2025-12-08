@@ -1,42 +1,30 @@
 import { $, browser } from '@wdio/globals'
-import Page from './url.js';
 import Components from '../pageobjects/components.js'
-import components from '../pageobjects/components.js';
-import largeFunctions from './largeFunctions.js';
+import Filters from './filters.js';
 
-class Functions extends Page {
+class Functions {
 
 /*     \\---------------------------- Click Menu Options ----------------------------//     */
 /*      \\--------------------------------------------------------------------------//     */
 
-    async aboutBtn1() {
-        await expect(Components.aboutMenuBtn1).toBePresent()
-        await Components.aboutMenuBtn1.click()
-        // await expect(browser).contains('INSTALL STEAM')
-    }
-
-    async aboutBtn2() {
-        await expect(Components.aboutMenuBtn2).toBePresent()
-        await Components.aboutMenuBtn2.click()
-        // await expect(browser).contains('INSTALL STEAM')
+    async aboutBtn() {
+        await expect(Components.aboutMenuBtn).toBePresent()
+        await Components.aboutMenuBtn.click()
     }
 
     async logoBtn() {
         await expect(Components.steamLogo).toBePresent()
         await Components.steamLogo.click()
-        // await expect(browser).contains('FEATURED & RECOMMENDED')
     }
 
     async commBtn() {
         await expect(Components.communityBtn).toBePresent()
         await Components.communityBtn.click()
-        // await expect(browser).contains('Community Activity')
     }
 
     async supportBtn() {
         await expect(Components.supportBtn).toBePresent()
         await Components.supportBtn.click()
-        // await expect(browser).contains('Steam Support')
     }
 
 /*     \\---------------------------- Click Carousel Arrows ----------------------------//     */
@@ -63,35 +51,7 @@ class Functions extends Page {
     }
 
     async slideClick() {
-        // await Components.carouselSlide.moveTo({ xOffset: 250, yOffset: 200})
-        await Components.carouselSlide.click({ xOffset: 250, yOffset: 200})
-    }
-
-/*     \\---------------------------- Select CS2 Listing ----------------------------//     */
-/*      \\--------------------------------------------------------------------------//     */
-
-    async cs2() {
-        await expect(Components.cs2Listing).toBePresent()
-        await Components.cs2Listing.click()
-        await expect(browser).toHaveUrl('https://store.steampowered.com/app/730/CounterStrike_2/')
-    }
-
-/*     \\---------------------------- Add CS2 Feature (Purchasable) to the Cart ----------------------------//     */
-/*      \\-------------------------------------------------------------------------------------------------//     */
-
-    async primeAdd2Cart() {
-        await expect(Components.add2Cart).toBePresent()
-        await Components.add2Cart.click()
-    }
-
-    async dialogBoxViewCart() {
-        await expect(Components.dialogViewCart).toBePresent()
-        await Components.dialogViewCart.click()
-    }
-
-    async selectProfile() {
-        await expect(Components.valveProfile).toBePresent()
-        await Components.valveProfile.click()
+        await Components.carouselSlide.click()
     }
 
 /*     \\---------------------------- Check for Mature Page ----------------------------//     */
@@ -107,6 +67,69 @@ class Functions extends Page {
         }
     }
 
+/*     \\---------------------------- Dev Profile Filter Buttons ----------------------------//     */
+/*      \\----------------------------------------------------------------------------------//     */
+
+/* ----- TYPE ----- */
+
+    async typeAllBtn() {
+        await Filters.typeAll.click()
+    }
+    async typeGameBtn() {
+        await Filters.typeGame.click()
+    }
+    async typeMusicBtn() {
+        await Filters.typeMusic.click()
+    }
+    async typeHardBtn() {
+        await Filters.typeHardware.click()
+    }
+    async typeDLCBtn() {
+        await Filters.typeDLC.click()
+    }
+    async typeSoftBtn() {
+        await Filters.typeSoftware.click()
+    }
+    async typeVideoBtn() {
+        await Filters.typeVideo.click()
+    }
+
+/* ----- FILTER TO ----- */
+
+    async filterToAllBtn() {
+        await Filters.filterToAll.click()
+    }
+    async filterToActBtn() {
+        await Filters.filterToAction.click()
+    }
+    async filterToAdvBtn() {
+        await Filters.filterToAdventure.click()
+    }
+    async filterToCoBtn() {
+        await Filters.filterToCoop.click()
+    }
+    async filterToMultiBtn() {
+        await Filters.filterToMulti.click()
+    }
+    async filterToMusicBtn() {
+        await Filters.filterToMusic.click()
+    }
+    async filterToStratBtn() {
+        await Filters.filterToStrategy.click()
+    }
+
+/*     \\---------------------------- Opening Test Pages ----------------------------//     */
+/*      \\--------------------------------------------------------------------------//     */
+
+    async openHomePage() {
+        await browser.url('https://store.steampowered.com/')
+        await expect(browser).toHaveUrl('https://store.steampowered.com/')
+    }
+
+    async openDevProfile() {
+        await browser.url('https://store.steampowered.com/developer/valve')
+        await expect(browser).toHaveUrl('https://store.steampowered.com/developer/valve')
+    }
 }
 
 export default new Functions();

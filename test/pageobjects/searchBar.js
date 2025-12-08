@@ -1,9 +1,8 @@
 import { $ } from '@wdio/globals'
-import Page from './url.js';
 
-class Search extends Page {
+class Search {
 
-    get inputSearch() {
+    get searchBar() {
         return $('//input[@placeholder="Search the store"]');
     }
 
@@ -11,14 +10,22 @@ class Search extends Page {
         return $('//button[@type="submit"]');
     }
 
-    async inputSearch(search) {
-        await this.inputSearch.setValue(search);
-        await this.btnSubmit.click();
+    get suggestBox() {
+        return $ (`//div[@id="searchSuggestions_«r0»"]`);
     }
 
-    open() {
-        return super.open();
+    get searchTag() {
+        return $(`//div[@id="searchtag_tmpl"][@class="searchtag tag_dynamic"]`);
     }
+
+    get oopsHeader() {
+        return $(`//div/h2`);
+    }
+
+    async inputSearch(search) {
+        await this.searchBar.setValue(search);
+    }
+
 }
 
 export default new Search();
