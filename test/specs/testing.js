@@ -8,6 +8,7 @@ describe('The final Capstone of this course', () => {
     it(`Moving through menu pages`, async () => {
         
         await Functions.openHomePage()
+        await LFunc.carouselLoop()
         await LFunc.menuLoop()
 
     })

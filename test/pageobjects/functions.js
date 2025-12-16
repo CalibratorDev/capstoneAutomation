@@ -4,9 +4,6 @@ import Filters from './filters.js';
 
 class Functions {
 
-/*     \\---------------------------- Click Menu Options ----------------------------//     */
-/*      \\--------------------------------------------------------------------------//     */
-
     async aboutBtn() {
         await expect(Components.aboutMenuBtn).toBePresent()
         await Components.aboutMenuBtn.click()
@@ -27,35 +24,29 @@ class Functions {
         await Components.supportBtn.click()
     }
 
-/*     \\---------------------------- Click Carousel Arrows ----------------------------//     */
-/*      \\-----------------------------------------------------------------------------//     */
-
     async featRgtArrowBtn() {
-        await expect(Components.featureRightArrow).toBePresent()
-        await Components.featureRightArrow.click()
+        await expect(Components.featureArrow(`right`)).toBePresent()
+        await Components.featureArrow(`right`).click()
     }
 
     async featLftArrowBtn() {
-        await expect(Components.featureLeftArrow).toBePresent()
-        await Components.featureLeftArrow.click()
+        await expect(Components.featureArrow(`left`)).toBePresent()
+        await Components.featureArrow(`left`).click()
     }
     
     async discRgtArrowBtn() {
-        await expect(Components.discountRightArrow).toBePresent()
-        await Components.discountRightArrow.click()
+        await expect(Components.discountArrow(`right`)).toBePresent()
+        await Components.discountArrow(`right`).click()
     }
 
     async discLftArrowBtn() {
-        await expect(Components.discountLeftArrow).toBePresent()
-        await Components.discountLeftArrow.click()
+        await expect(Components.discountArrow(`left`)).toBePresent()
+        await Components.discountArrow(`left`).click()
     }
 
     async slideClick() {
         await Components.carouselSlide.click()
     }
-
-/*     \\---------------------------- Check for Mature Page ----------------------------//     */
-/*      \\-----------------------------------------------------------------------------//     */
 
     async checkForMature() {
 
@@ -67,59 +58,49 @@ class Functions {
         }
     }
 
-/*     \\---------------------------- Dev Profile Filter Buttons ----------------------------//     */
-/*      \\----------------------------------------------------------------------------------//     */
-
-/* ----- TYPE ----- */
-
     async typeAllBtn() {
-        await Filters.typeAll.click()
+        await Filters.filterTypeSelector(`All`).click()
     }
     async typeGameBtn() {
-        await Filters.typeGame.click()
+        await Filters.filterTypeSelector(`Game`).click()
     }
     async typeMusicBtn() {
-        await Filters.typeMusic.click()
+        await Filters.filterTypeSelector(`Soundtracks`).click()
     }
     async typeHardBtn() {
-        await Filters.typeHardware.click()
+        await Filters.filterTypeSelector(`Hardware`).click()
     }
     async typeDLCBtn() {
-        await Filters.typeDLC.click()
+        await Filters.filterTypeSelector(`DLC`).click()
     }
     async typeSoftBtn() {
-        await Filters.typeSoftware.click()
+        await Filters.filterTypeSelector(`Software`).click()
     }
     async typeVideoBtn() {
-        await Filters.typeVideo.click()
+        await Filters.filterTypeSelector(`Video`).click()
     }
-
-/* ----- FILTER TO ----- */
 
     async filterToAllBtn() {
-        await Filters.filterToAll.click()
+        await Filters.filterTagSelector(`All`).click()
     }
     async filterToActBtn() {
-        await Filters.filterToAction.click()
+        await Filters.filterTagSelector(`Action`).click()
     }
     async filterToAdvBtn() {
-        await Filters.filterToAdventure.click()
+        await Filters.filterTagSelector(`Adventure`).click()
     }
     async filterToCoBtn() {
-        await Filters.filterToCoop.click()
+        await Filters.filterTagSelector(`Co-op`).click()
     }
     async filterToMultiBtn() {
-        await Filters.filterToMulti.click()
+        await Filters.filterTagSelector(`Multiplayer`).click()
     }
     async filterToMusicBtn() {
-        await Filters.filterToMusic.click()
+        await Filters.filterTagSelector(`Soundtrack`).click()
     }
     async filterToStratBtn() {
-        await Filters.filterToStrategy.click()
+        await Filters.filterTagSelector(`Strategy`).click()
     }
-
-/*     \\---------------------------- Opening Test Pages ----------------------------//     */
-/*      \\--------------------------------------------------------------------------//     */
 
     async openHomePage() {
         await browser.url('https://store.steampowered.com/')

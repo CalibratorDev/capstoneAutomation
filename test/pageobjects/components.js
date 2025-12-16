@@ -2,9 +2,6 @@ import { $, browser } from '@wdio/globals'
 
 class Components {
 
-/*     \\---------------------------- Menu Buttons ----------------------------//     */
-/*      \\--------------------------------------------------------------------//     */
-
     get aboutMenuBtn() {
         return $('//div[@class]/div[@role]/a[@href="https://store.steampowered.com/about/"]');
     }
@@ -21,23 +18,12 @@ class Components {
         return $('//div[@role]/a[@href="https://help.steampowered.com/en/"]');
     }
 
-/*     \\---------------------------- Home Page Carousel Components ----------------------------//     */
-/*      \\-------------------------------------------------------------------------------------//     */
-
-    get featureRightArrow() {
-        return $('//div/div[@class="arrow right"][@data-usability="1"]');
+    featureArrow(leftRight) {
+        return $(`//div/div[@class="arrow ${leftRight}"][@data-usability="1"]`);
     }
 
-    get featureLeftArrow() {
-        return $('//div/div[@class="arrow left"][@data-usability="1"]');
-    }
-
-    get discountRightArrow() {
-        return $('//div/div[@class="arrow right"][@data-usability="2"]');
-    }
-
-    get discountLeftArrow() {
-        return $('//div/div[@class="arrow left"][@data-usability="2"]');
+    discountArrow(leftRight) {
+        return $(`//div/div[@class="arrow ${leftRight}"][@data-usability="2"]`);
     }
 
     get carouselSlide() {
@@ -60,9 +46,6 @@ class Components {
         return $(`//*/div[@id="global_hover"]/div/div/div/h4`);
     }
 
-/*     \\---------------------------- View Mature Page ----------------------------//     */
-/*      \\------------------------------------------------------------------------//     */
-
     get viewMaturePageBtn() {
         return $(`//a[@id="view_product_page_btn"]`);
     }
@@ -78,9 +61,6 @@ class Components {
     get yearDrpDwn() {
         return $(`//div/select[@id="ageYear"]`);
     }
-
-/*     \\---------------------------- Carousel Thumbs ----------------------------//     */
-/*      \\-----------------------------------------------------------------------//     */
 
     get carouselThumbOne() {
         return $(`//div[@class="carousel_thumbs"][@data-usability="1"]/div[@class="focus"]`);

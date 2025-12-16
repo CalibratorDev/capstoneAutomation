@@ -6,8 +6,6 @@ import Filters from './filters.js';
 
 class LFunc {
 
-/*     \\---------------------------- Looping the Menu Buttons ----------------------------//     */
-/*      \\--------------------------------------------------------------------------------//     */
     async menuLoop() {
         for (let i = 0; i < 2; i++) {
             await Functions.commBtn()
@@ -16,9 +14,6 @@ class LFunc {
             await Functions.logoBtn()
         }
     }
-
-/*     \\---------------------------- Check if Names Match ----------------------------//     */
-/*      \\----------------------------------------------------------------------------//     */
 
     async checkNames() {
         let currentSlideText = await Components.currentSlide.getText();
@@ -39,37 +34,28 @@ class LFunc {
         await Functions.logoBtn();
     }
 
-/*     \\---------------------------- Carousel Loop: Arrows & Thumbs ----------------------------//     */
-/*      \\--------------------------------------------------------------------------------------//     */
-
     async carouselLoop() {
         
         for (let i = 0; i < 8; i++) {
-            Components.featureRightArrow.click()
+            Functions.featRgtArrowBtn()
         }
         for (let i = 0; i < 3; i++) {
-            Components.featureLeftArrow.click()
+            Functions.featLftArrowBtn()
         }
         for (let i = 0; i < 4; i++) {
-            Components.discountRightArrow.click()
+            Functions.discRgtArrowBtn()
         }
         for (let i = 0; i < 2; i++) {
-            Components.discountLeftArrow.click()
+            Functions.discLftArrowBtn()
         }
 
     }
-
-/*     \\---------------------------- Looping the nameCheck Function ----------------------------//     */
-/*      \\--------------------------------------------------------------------------------------//     */
 
     async nameCheckLoop() {
         for (let i = 0; i < 5; i++) {
             await this.checkNames()
         }
     }
-
-/*     \\---------------------------- Search Using: Letters, Numbers, Special, Empty, Spam, Real Game Name, Character Limit ----------------------------//     */
-/*      \\---------------------------------------------------------------------------------------------------------------------------------------------//     */
 
     async letterSearch() {
         await Search.searchBar.click()
@@ -149,11 +135,6 @@ class LFunc {
         await this.charLimitSearch()
     }
 
-/*     \\---------------------------- Enabling / Disabling each filter type individually, and then all together ----------------------------//     */
-/*      \\---------------------------------------------------------------------------------------------------------------------------------//     */
-
-/* ----- TYPE ----- */
-
     async pressTypeInd() {
         await Functions.typeAllBtn()
         await Functions.typeAllBtn()
@@ -177,24 +158,17 @@ class LFunc {
         await Functions.typeVideoBtn()
     }
     async pressTypeAll() {
-        await Functions.typeAllBtn()
-        await Functions.typeGameBtn()
-        await Functions.typeMusicBtn()
-        await Functions.typeHardBtn()
-        await Functions.typeDLCBtn()
-        await Functions.typeSoftBtn()
-        await Functions.typeVideoBtn()
 
-        await Functions.typeAllBtn()
-        await Functions.typeGameBtn()
-        await Functions.typeMusicBtn()
-        await Functions.typeHardBtn()
-        await Functions.typeDLCBtn()
-        await Functions.typeSoftBtn()
-        await Functions.typeVideoBtn()
+        for (let i = 0; i < 2; i++) {
+            await Functions.typeAllBtn()
+            await Functions.typeGameBtn()
+            await Functions.typeMusicBtn()
+            await Functions.typeHardBtn()
+            await Functions.typeDLCBtn()
+            await Functions.typeSoftBtn()
+            await Functions.typeVideoBtn()
+        }
     }
-
-/* ----- FILTER TO ----- */
 
     async pressFilterToInd() {
         await Functions.filterToAllBtn()
@@ -219,24 +193,17 @@ class LFunc {
         await Functions.filterToStratBtn()
     }
     async pressFilterToAll() {
-        await Functions.filterToAllBtn()
-        await Functions.filterToActBtn()
-        await Functions.filterToAdvBtn()
-        await Functions.filterToCoBtn()
-        await Functions.filterToMultiBtn()
-        await Functions.filterToMusicBtn()
-        await Functions.filterToStratBtn()
 
-        await Functions.filterToAllBtn()
-        await Functions.filterToActBtn()
-        await Functions.filterToAdvBtn()
-        await Functions.filterToCoBtn()
-        await Functions.filterToMultiBtn()
-        await Functions.filterToMusicBtn()
-        await Functions.filterToStratBtn()
+        for (let i = 0; i < 2; i++) {
+            await Functions.filterToAllBtn()
+            await Functions.filterToActBtn()
+            await Functions.filterToAdvBtn()
+            await Functions.filterToCoBtn()
+            await Functions.filterToMultiBtn()
+            await Functions.filterToMusicBtn()
+            await Functions.filterToStratBtn()
+        }
     }
-
-/* ----- WHOLE TEST ----- */
 
     async filtersTest() {
         await this.pressTypeInd()
